@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import Contact from './components/Contact';
 
 function App() {
+  // Main application component
   const [activePage, setActivePage] = useState('about');
 
   const renderPage = () => {
