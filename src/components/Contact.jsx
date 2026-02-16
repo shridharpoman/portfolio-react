@@ -36,7 +36,8 @@ const Contact = ({ active }) => {
 
       <section className="contact-form">
         <h3 className="h3 form-title">Contact Form</h3>
-        <form action="#" className="form" data-form>
+        {/* Replace ACTION_URL with your Formspree endpoint (e.g., https://formspree.io/f/xyza...) */}
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="form" data-form>
           <div className="input-wrapper">
             <input
               type="text"

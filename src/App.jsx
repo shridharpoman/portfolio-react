@@ -10,6 +10,19 @@ import Contact from './components/Contact';
 function App() {
   // Main application component
   const [activePage, setActivePage] = useState('about');
+  const [theme, setTheme] = useState('dark');
+
+  React.useEffect(() => {
+    if (theme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   const renderPage = () => {
     switch (activePage) {
@@ -26,7 +39,12 @@ function App() {
     <main>
       <Sidebar />
       <div className="main-content">
-        <Navbar activePage={activePage} setActivePage={setActivePage} />
+        <Navbar 
+          activePage={activePage} 
+          setActivePage={setActivePage} 
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
         {renderPage()}
       </div>
     </main>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = ({ activePage, setActivePage }) => {
+const Navbar = ({ activePage, setActivePage, theme, toggleTheme }) => {
   const navItems = ['About', 'Resume', 'Portfolio', 'Blog', 'Contact'];
 
   return (
@@ -17,6 +17,11 @@ const Navbar = ({ activePage, setActivePage }) => {
             </button>
           </li>
         ))}
+        <li className="navbar-item">
+          <button className="navbar-link" onClick={toggleTheme}>
+            <ion-icon name={theme === 'dark' ? 'sunny-outline' : 'moon-outline'}></ion-icon>
+          </button>
+        </li>
       </ul>
     </nav>
   );
